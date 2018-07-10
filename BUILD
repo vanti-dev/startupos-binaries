@@ -5,7 +5,7 @@ sh_binary(
     srcs = ["grpc_java_plugin.sh"],
     data = [
         "grpc_java_plugin_linux",
-#        "grpc_java_plugin_osx",
+        "grpc_java_plugin_osx",
     ],
 )
 
