@@ -9,7 +9,7 @@ Built from https://github.com/johnynek/bazel-deps at `d90766f16fa15fe3b9c476c11f
 Can be run as
 `java -jar bazel-bin/src/scala/com/github/johnynek/bazel_deps/parseproject.deploy.jar`
 
-### grpc_java_plugin_linux, grpc_java_plugin_osx
+### grpc_java_plugin_linux
 Created using:
 ```
 docker run -it angular/ngcontainer:0.3.2
@@ -21,6 +21,10 @@ bazel build //compiler:grpc_java_plugin
 # These commands should be run from outside the container:
 docker ps
 # Paste ID from terminal into:
-docker cp <ID>:/home/circleci/grpc-java/bazel-bin/compiler/grpc_java_plugin grpc_java_plugin
+docker cp <ID>:/home/circleci/grpc-java/bazel-bin/compiler/grpc_java_plugin grpc_java_plugin_linux
 ```
+
+### grpc_java_plugin_osx
+Follow instructions above, skipping the docker commands.
+Result should be at `bazel-bin/compiler/grpc_java_plugin`
 
