@@ -28,3 +28,18 @@ docker cp <ID>:/home/circleci/grpc-java/bazel-bin/compiler/grpc_java_plugin grpc
 Follow instructions above, skipping the docker commands.
 Result should be at `bazel-bin/compiler/grpc_java_plugin`
 
+
+### grpcwebproxy_linux
+Install `go` and `dep` (https://github.com/golang/dep)
+`go get -u github.com/improbable-eng/grpc-web/go/grpcwebproxy`
+`cd $(go env GOPATH)/src/github.com/improbable-eng/grpc-web`
+`dep ensure`
+`cd go/grpcwebproxy/`
+`CGO_ENABLED=0 GOOS=linux go build -a -ldflags '-extldflags "-static"'`
+`mv grpcwebproxy grpcwebproxy_linux`
+
+### grpcwebproxy_mac
+Same as above, except for the last 2 commands:
+`CGO_ENABLED=0 go build -a -ldflags '-extldflags "-static"'`
+`mv grpcwebproxy grpcwebproxy_mac`
+
