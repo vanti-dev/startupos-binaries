@@ -19,3 +19,13 @@ java_binary(
     runtime_deps = [":bazel_deps_parseproject_deploy_jar"],
     main_class = "com.github.johnynek.bazel_deps.ParseProject"
 )
+
+sh_binary(
+    name = "grpcwebproxy",
+    srcs = ["grpcwebproxy.sh"],
+    visibility = ["//visibility:public"],
+    data = [
+        "grpcwebproxy_linux",
+        "grpcwebproxy_osx",
+    ],
+)

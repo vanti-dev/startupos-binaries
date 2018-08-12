@@ -30,6 +30,8 @@ Result should be at `bazel-bin/compiler/grpc_java_plugin`
 
 
 ### grpcwebproxy_linux
+Translates grpc-web HTTP/1.1 requests to gRPC server.
+
 Install `go` and `dep` (https://github.com/golang/dep)
 `go get -u github.com/improbable-eng/grpc-web/go/grpcwebproxy`
 `cd $(go env GOPATH)/src/github.com/improbable-eng/grpc-web`
