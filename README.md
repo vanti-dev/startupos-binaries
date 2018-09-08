@@ -45,3 +45,16 @@ Same as above, except for the last 2 commands:
 `CGO_ENABLED=0 go build -a -ldflags '-extldflags "-static"'`
 `mv grpcwebproxy grpcwebproxy_mac`
 
+### clang-format
+There doesn't seem to be a separate release for `clang-format`, and the entire toolchain weighs ~300mb.
+To save the heavy download, we extract the `clang-format`, which is ~2mb:
+
+```
+wget https://releases.llvm.org/6.0.0/clang+llvm-6.0.0-x86_64-linux-gnu-ubuntu-16.04.tar.xz
+tar -xf clang+llvm-6.0.0-x86_64-linux-gnu-ubuntu-16.04.tar.xz clang+llvm-6.0.0-x86_64-linux-gnu-ubuntu-16.04/bin/clang-format
+cp clang+llvm-6.0.0-x86_64-linux-gnu-ubuntu-16.04/bin/clang-format clang_format_bin
+
+wget https://releases.llvm.org/6.0.0/clang+llvm-6.0.0-x86_64-apple-darwin.tar.xz
+tar -xf clang+llvm-6.0.0-x86_64-apple-darwin.tar.xz clang+llvm-6.0.0-x86_64-apple-darwin/bin/clang-format
+cp clang+llvm-6.0.0-x86_64-apple-darwin/bin/clang-format clang_format_bin_osx
+```
