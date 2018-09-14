@@ -33,17 +33,21 @@ Result should be at `bazel-bin/compiler/grpc_java_plugin`
 Translates grpc-web HTTP/1.1 requests to gRPC server.
 
 Install `go` and `dep` (https://github.com/golang/dep)
-`go get -u github.com/improbable-eng/grpc-web/go/grpcwebproxy`
-`cd $(go env GOPATH)/src/github.com/improbable-eng/grpc-web`
-`dep ensure`
-`cd go/grpcwebproxy/`
-`CGO_ENABLED=0 GOOS=linux go build -a -ldflags '-extldflags "-static"'`
-`mv grpcwebproxy grpcwebproxy_linux`
+```
+go get -u github.com/improbable-eng/grpc-web/go/grpcwebproxy
+cd $(go env GOPATH)/src/github.com/improbable-eng/grpc-web
+dep ensure
+cd go/grpcwebproxy/
+CGO_ENABLED=0 GOOS=linux go build -a -ldflags '-extldflags "-static"'
+mv grpcwebproxy grpcwebproxy_linux
+```
 
 ### grpcwebproxy_mac
 Same as above, except for the last 2 commands:
-`CGO_ENABLED=0 go build -a -ldflags '-extldflags "-static"'`
-`mv grpcwebproxy grpcwebproxy_mac`
+```
+CGO_ENABLED=0 go build -a -ldflags '-extldflags "-static"'
+mv grpcwebproxy grpcwebproxy_mac
+```
 
 ### clang-format
 There doesn't seem to be a separate release for `clang-format`, and the entire toolchain weighs ~300mb.
