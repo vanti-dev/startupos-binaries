@@ -12,16 +12,11 @@ Can be run as
 ### grpc_java_plugin_linux
 Created using:
 ```
-docker run -it angular/ngcontainer:0.3.2
 git clone https://github.com/grpc/grpc-java.git
 cd grpc-java/
-# Version 1.12.0:
-git reset --hard 61f2528ccd839199de2a750bad407b188a6fe68d
-bazel build //compiler:grpc_java_plugin
-# These commands should be run from outside the container:
-docker ps
-# Paste ID from terminal into:
-docker cp <ID>:/home/circleci/grpc-java/bazel-bin/compiler/grpc_java_plugin grpc_java_plugin_linux
+git reset --hard v1.16.1
+bazel build --incompatible_remove_native_http_archive=false --incompatible_package_name_is_a_function=false //compiler:grpc_java_plugin
+cp bazel-bin/compiler/grpc_java_plugin grpc_java_plugin_linux
 ```
 
 ### grpc_java_plugin_osx
