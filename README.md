@@ -3,7 +3,7 @@ Repo for startup-os binaries. Binaries are stored as GitHub releases.
 
 ### parseproject_deploy.jar
 Built from https://github.com/johnynek/bazel-deps using:
-`git checkout 1761b8ddae2dd4d252302e34b86a816bcf369d7a`
+`git checkout e3f77e22d9f5b070915067a766607cfc96835c98`
 `bazel build //src/scala/com/github/johnynek/bazel_deps:parseproject_deploy.jar`
 
 Can be run as
